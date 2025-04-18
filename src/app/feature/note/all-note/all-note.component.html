@@ -1,1 +1,98 @@
-<p>all-note works!</p>
+
+
+<div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h2 class="brand-title">CRUD OPERATIONS</h2>
+      </div>
+      
+      <div class="user-profile">
+        <div class="avatar"></div>
+        <div class="user-info">
+          <h3 class="user-name">Karthi Madesh</h3>
+          <span class="user-role">user</span>
+        </div>
+      </div>
+      
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="#" class="nav-link">
+              <i class="icon home-icon"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icon list-icon"></i>
+              <span>show all notes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icon add-icon"></i>
+              <span>create note</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icon delete-icon"></i>
+              <span>delete all notes</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="logout-btn">
+          <span>Logout</span>
+          <i class="icon logout-icon"></i>
+        </button>
+      </div>
+    </aside>
+  
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      
+<div class="hero">
+
+        <div class="crudhead">
+            <h2>Crud List</h2>
+            <div class="btns">
+                <button (click)="getalldata()">Show All</button>
+                <button (click)="deletealldata()">Delete All</button>
+            </div>
+        </div> 
+        <div class="rowhead">
+            <div class="">category</div>
+            <div class="">content</div>
+            <div class="">priority</div>
+            <div class="">tags</div>
+            <div class="">title</div>
+        </div> 
+
+        <div class="">
+            <div class="" *ngFor="let note of notes" ngClass="rowdata" @noteAnimation  [@creativeDelete]="deleteStates[note.id] || 'visible'" data-aos="fade-right" >
+                <div>{{note.category}}</div>
+                <div >{{note.content}}</div>
+                <div>{{note.priority}}</div>
+                <div>{{note.tags}}</div>
+                <div>{{note.title}}</div>
+                <div class="showbtn">
+                  <button type="button" (click)="goToNote(note)"  >Show Note</button> 
+                </div>
+                <div class="deletebtn">
+                    <button type="button" (click)="deleteOneNote(note)" class="deletebtn" >Delete Note</button> 
+                </div>
+            </div>
+        </div>
+   
+</div>
+     
+      
+    </main>
+  </div>
+
+

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ToastrModule } from 'ngx-toastr'; // Import ToastrModule
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './shared/sidebar/sidebar.component'; // Import HttpClientModule
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component'; // Import
     AppRoutingModule,
     AuthModule,
     BrowserAnimationsModule,
+    CoreModule,
     HttpClientModule, // Add HttpClientModule for AuthService HTTP requests
+    BrowserAnimationsModule, //make animations
     ToastrModule.forRoot({ // Configure Toastr globally
       timeOut: 3000, // Toast duration (3 seconds)
       positionClass: 'toast-top-right', // Position of the toast

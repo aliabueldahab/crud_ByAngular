@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { interceptorProviders } from './interceptors';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    
+    
+  ],
+
+  providers:[
+    interceptorProviders,
   ]
 })
 export class CoreModule { }

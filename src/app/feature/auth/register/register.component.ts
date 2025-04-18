@@ -38,7 +38,7 @@ export class RegisterComponent {
         next: (response) => {
           this.loading = false;
           this.toastr.success('Account created successfully! Welcome!', 'Success');
-          this.router.navigate(['auth/signin']);
+          this.router.navigate(['']);
         },
         error: (error) => {
           this.loading = false;

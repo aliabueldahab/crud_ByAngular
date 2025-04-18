@@ -1,1 +1,29 @@
-<p>show-note works!</p>
+<div class="p-6 container" *ngIf="note">
+  <div class="all bg-white shadow-md rounded-xl p-6 max-w-3xl mx-auto">
+  
+
+    <div class="space-y-2 text-gray-700">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">📌 {{ note.title }}</h2>
+      <p><strong>📁 Category:</strong> {{ note.category }}</p>
+      <p><strong>⚡ Priority:</strong> {{ note.priority }}</p>
+      <p><strong>🏷️ Tags:</strong> {{ note.tags }}</p>
+      <p><strong>📝 Content:</strong>{{note.content}}</p>
+    </div>
+
+    <div class=" btns mt-6 flex justify-between">
+      <button
+        class="editbtn"
+        routerLink=""
+      >
+        Edit Note🛠️
+      </button>
+      <button class="Backbtn" routerLink="/note/all-note">
+        Back➡️
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!note" class="text-center text-gray-600 mt-10">
+  Loading note details...
+</div>
